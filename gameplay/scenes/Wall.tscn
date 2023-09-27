@@ -1,4 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcatxh6p8nnqj"]
+[gd_scene load_steps=4 format=3 uid="uid://dcatxh6p8nnqj"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xavix"]
+friction = 0.0
+bounce = 1.0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_xsus1"]
 
@@ -6,6 +10,7 @@
 size = Vector2(82, 10)
 
 [node name="Wall" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_xavix")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(82, 10)

@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2nbx0xw46im7"]
+[gd_scene load_steps=6 format=3 uid="uid://c2nbx0xw46im7"]
 
 [ext_resource type="PackedScene" uid="uid://dwbcsxf4rgfef" path="res://gameplay/scenes/Ball.tscn" id="1_1mbjl"]
 [ext_resource type="PackedScene" uid="uid://dcatxh6p8nnqj" path="res://gameplay/scenes/Wall.tscn" id="2_2ghbg"]
 [ext_resource type="PackedScene" uid="uid://bd7rvuomtx7at" path="res://gameplay/scenes/Flipper_Left.tscn" id="3_5duty"]
 [ext_resource type="PackedScene" uid="uid://bbmowq58sty5c" path="res://gameplay/scenes/Flipper_Right.tscn" id="4_2yasa"]
+[ext_resource type="PackedScene" uid="uid://b8g5ghr436lgf" path="res://gameplay/scenes/bumper_round.tscn" id="5_aipb0"]
 
 [node name="Main" type="Node2D"]
+position = Vector2(32, 32)
 
 [node name="Ball" parent="." instance=ExtResource("1_1mbjl")]
 position = Vector2(61, 106)
@@ -58,3 +60,24 @@ scale = Vector2(0.5, 0.5)
 [node name="Flipper_Left2" parent="." instance=ExtResource("4_2yasa")]
 position = Vector2(197, 559)
 scale = Vector2(0.5, 0.5)
+
+[node name="Bumper_Round" parent="." instance=ExtResource("5_aipb0")]
+position = Vector2(64, 226)
+
+[node name="Bumper_Round4" parent="." instance=ExtResource("5_aipb0")]
+position = Vector2(19, 422)
+
+[node name="Bumper_Round5" parent="." instance=ExtResource("5_aipb0")]
+position = Vector2(290, 423)
+
+[node name="Bumper_Round6" parent="." instance=ExtResource("5_aipb0")]
+position = Vector2(256, 520)
+
+[node name="Bumper_Round7" parent="." instance=ExtResource("5_aipb0")]
+position = Vector2(149, 98)
+
+[node name="Bumper_Round2" parent="." instance=ExtResource("5_aipb0")]
+position = Vector2(240, 229)
+
+[node name="Bumper_Round3" parent="." instance=ExtResource("5_aipb0")]
+position = Vector2(152, 340)
