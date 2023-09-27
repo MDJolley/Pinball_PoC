@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbmowq58sty5c"]
+
+[ext_resource type="Script" path="res://gameplay/scripts/Flipper_Right.gd" id="1_ofdhl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c1evs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puc7q"]
+size = Vector2(105, 18)
+
+[node name="Flipper_Right" type="CharacterBody2D"]
+motion_mode = 1
+slide_on_ceiling = false
+script = ExtResource("1_ofdhl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-43.5, 0)
+scale = Vector2(105, 18)
+texture = SubResource("CanvasTexture_c1evs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-43.5, 0)
+shape = SubResource("RectangleShape2D_puc7q")

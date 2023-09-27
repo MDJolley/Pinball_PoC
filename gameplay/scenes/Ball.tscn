@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwbcsxf4rgfef"]
+
+[ext_resource type="Script" path="res://gameplay/scripts/Ball.gd" id="1_p36vn"]
+[ext_resource type="Texture2D" uid="uid://ccgkkdsabk6xy" path="res://gameplay/assets/Default_Ball.png" id="2_p3bv0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mfh8r"]
+bounce = 0.66
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jiq7t"]
+radius = 8.0
+height = 16.0
+
+[node name="Ball" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_mfh8r")
+continuous_cd = 1
+script = ExtResource("1_p36vn")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_jiq7t")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_p3bv0")
