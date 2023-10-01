@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=360
 window/size/viewport_height=640
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/rmsmartshape/plugin.cfg")
+
 [input]
 
 Left={
@@ -45,3 +49,4 @@ common/max_physics_steps_per_frame=16
 
 renderer/rendering_method="mobile"
 textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_repeat=1

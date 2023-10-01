@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8g5ghr436lgf"]
 
 [ext_resource type="Script" path="res://gameplay/scripts/Bumper_Round.gd" id="1_hcbig"]
-[ext_resource type="Texture2D" uid="uid://dfsmpynjb7k7g" path="res://gameplay/assets/Bumper_Round.png" id="2_30g37"]
+[ext_resource type="Texture2D" uid="uid://qulf2vjdrqoe" path="res://gameplay/assets/Bumper_Round.svg" id="2_o2dh2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tcgi5"]
 radius = 15.0
@@ -10,7 +10,8 @@ radius = 15.0
 script = ExtResource("1_hcbig")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_30g37")
+scale = Vector2(0.131249, 0.131249)
+texture = ExtResource("2_o2dh2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_tcgi5")

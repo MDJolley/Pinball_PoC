@@ -1,83 +1,31 @@
 [gd_scene load_steps=6 format=3 uid="uid://c2nbx0xw46im7"]
 
 [ext_resource type="PackedScene" uid="uid://dwbcsxf4rgfef" path="res://gameplay/scenes/Ball.tscn" id="1_1mbjl"]
-[ext_resource type="PackedScene" uid="uid://dcatxh6p8nnqj" path="res://gameplay/scenes/Wall.tscn" id="2_2ghbg"]
+[ext_resource type="PackedScene" uid="uid://cknyc4n4ivfuh" path="res://gameplay/scenes/Arena.tscn" id="1_hvy14"]
 [ext_resource type="PackedScene" uid="uid://bd7rvuomtx7at" path="res://gameplay/scenes/Flipper_Left.tscn" id="3_5duty"]
 [ext_resource type="PackedScene" uid="uid://bbmowq58sty5c" path="res://gameplay/scenes/Flipper_Right.tscn" id="4_2yasa"]
 [ext_resource type="PackedScene" uid="uid://b8g5ghr436lgf" path="res://gameplay/scenes/bumper_round.tscn" id="5_aipb0"]
 
-[node name="Main" type="Node2D"]
-position = Vector2(32, 32)
+[node name="Node2D" type="Node2D"]
 
-[node name="Ball" parent="." instance=ExtResource("1_1mbjl")]
-position = Vector2(61, 106)
-rotation = -0.0220377
-
-[node name="Wall" parent="." instance=ExtResource("2_2ghbg")]
-position = Vector2(4, 149)
-rotation = 1.57032
-scale = Vector2(3.64, 1)
-
-[node name="Wall2" parent="." instance=ExtResource("2_2ghbg")]
-position = Vector2(5, 443)
-rotation = 1.57032
-scale = Vector2(3.64, 1)
-
-[node name="Wall4" parent="." instance=ExtResource("2_2ghbg")]
-position = Vector2(293, 151)
-rotation = 1.57032
-scale = Vector2(3.64, 1)
-
-[node name="Wall8" parent="." instance=ExtResource("2_2ghbg")]
-position = Vector2(323, 486)
-rotation = 2.61799
-scale = Vector2(3.64, 1)
-
-[node name="Wall5" parent="." instance=ExtResource("2_2ghbg")]
-position = Vector2(293, 437)
-rotation = 1.57032
-scale = Vector2(3.64, 1)
-
-[node name="Wall6" parent="." instance=ExtResource("2_2ghbg")]
-position = Vector2(150, 586)
-rotation = 3.13756
-scale = Vector2(3.64, 1)
-
-[node name="Wall7" parent="." instance=ExtResource("2_2ghbg")]
-position = Vector2(-28, 486)
-rotation = 0.523599
-scale = Vector2(3.64, 1)
-
-[node name="Wall3" parent="." instance=ExtResource("2_2ghbg")]
-position = Vector2(149, 5.99998)
-rotation = 3.14435
-scale = Vector2(3.64, 1)
+[node name="Node2D" parent="." instance=ExtResource("1_hvy14")]
 
 [node name="Flipper_Left" parent="." instance=ExtResource("3_5duty")]
-position = Vector2(100, 559)
-scale = Vector2(0.5, 0.5)
+position = Vector2(126, 590)
+scale = Vector2(0.418, 0.418)
 
-[node name="Flipper_Left2" parent="." instance=ExtResource("4_2yasa")]
-position = Vector2(197, 559)
-scale = Vector2(0.5, 0.5)
+[node name="Flipper_Right" parent="." instance=ExtResource("4_2yasa")]
+position = Vector2(218, 589)
+scale = Vector2(0.418, 0.418)
+
+[node name="Ball" parent="." instance=ExtResource("1_1mbjl")]
+position = Vector2(98, 532)
 
 [node name="Bumper_Round" parent="." instance=ExtResource("5_aipb0")]
-position = Vector2(64, 226)
-
-[node name="Bumper_Round4" parent="." instance=ExtResource("5_aipb0")]
-position = Vector2(19, 422)
-
-[node name="Bumper_Round5" parent="." instance=ExtResource("5_aipb0")]
-position = Vector2(290, 423)
-
-[node name="Bumper_Round6" parent="." instance=ExtResource("5_aipb0")]
-position = Vector2(256, 520)
-
-[node name="Bumper_Round7" parent="." instance=ExtResource("5_aipb0")]
-position = Vector2(149, 98)
+position = Vector2(81, 315)
 
 [node name="Bumper_Round2" parent="." instance=ExtResource("5_aipb0")]
-position = Vector2(240, 229)
+position = Vector2(268, 307)
 
 [node name="Bumper_Round3" parent="." instance=ExtResource("5_aipb0")]
-position = Vector2(152, 340)
+position = Vector2(176, 399)
