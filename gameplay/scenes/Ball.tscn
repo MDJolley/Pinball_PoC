@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b48kf8nkgbtng" path="res://gameplay/assets/Ball.svg" id="2_tishl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mfh8r"]
+friction = 0.0
 bounce = 0.2
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jiq7t"]
@@ -11,8 +12,9 @@ radius = 8.0
 height = 16.0
 
 [node name="Ball" type="RigidBody2D" groups=["ball"]]
+mass = 0.39
 physics_material_override = SubResource("PhysicsMaterial_mfh8r")
-gravity_scale = 0.5
+gravity_scale = 0.4
 continuous_cd = 1
 script = ExtResource("1_p36vn")
 
