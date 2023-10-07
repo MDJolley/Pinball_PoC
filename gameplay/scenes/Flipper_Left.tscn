@@ -1,24 +1,127 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd7rvuomtx7at"]
+[gd_scene load_steps=22 format=3 uid="uid://bvuywtmfjgb8c"]
 
-[ext_resource type="Script" path="res://gameplay/scripts/Flipper_Left.gd" id="1_j3qq0"]
+[ext_resource type="Script" path="res://gameplay/scripts/Flipper_Left.gd" id="1_d5dbd"]
+[ext_resource type="Shader" path="res://gameplay/shaders/ouline_shader.gdshader" id="2_qp8jj"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="3_b17d2"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="4_lseqf"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="5_txka3"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="6_emja4"]
+[ext_resource type="Texture2D" uid="uid://ca8453yrew8fm" path="res://gameplay/assets/White.png" id="7_j2r3p"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="7_s1dqu"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_c1evs"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f2qoc"]
+shader = ExtResource("2_qp8jj")
+shader_parameter/color = Color(1, 0, 1, 1)
+shader_parameter/width = 10.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = false
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_puc7q"]
-size = Vector2(105, 18)
+[sub_resource type="Resource" id="Resource_k7c2c"]
+script = ExtResource("4_lseqf")
+texture_idx = 0
+flip = false
+width = 1.0
 
-[node name="Flipper_Left" type="CharacterBody2D"]
-motion_mode = 1
-slide_on_ceiling = false
-script = ExtResource("1_j3qq0")
+[sub_resource type="Resource" id="Resource_w2liv"]
+script = ExtResource("5_txka3")
+position = Vector2(0, -32)
+point_in = Vector2(-36, 0)
+point_out = Vector2(54, 0)
+properties = SubResource("Resource_k7c2c")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(43.5, 0)
-rotation = 3.14159
-scale = Vector2(105, 18)
-texture = SubResource("CanvasTexture_c1evs")
+[sub_resource type="Resource" id="Resource_3ioy1"]
+script = ExtResource("4_lseqf")
+texture_idx = -7
+flip = false
+width = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(43.5, 0)
-rotation = 3.14159
-shape = SubResource("RectangleShape2D_puc7q")
+[sub_resource type="Resource" id="Resource_w52lb"]
+script = ExtResource("5_txka3")
+position = Vector2(270, 0)
+point_in = Vector2(0, -20)
+point_out = Vector2(0, 20)
+properties = SubResource("Resource_3ioy1")
+
+[sub_resource type="Resource" id="Resource_25o2b"]
+script = ExtResource("4_lseqf")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_sqfyk"]
+script = ExtResource("5_txka3")
+position = Vector2(0, 32)
+point_in = Vector2(54, 0)
+point_out = Vector2(-36, 0)
+properties = SubResource("Resource_25o2b")
+
+[sub_resource type="Resource" id="Resource_dowth"]
+script = ExtResource("4_lseqf")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_knqnr"]
+script = ExtResource("5_txka3")
+position = Vector2(0, -32)
+point_in = Vector2(-36, 0)
+point_out = Vector2(54, 0)
+properties = SubResource("Resource_dowth")
+
+[sub_resource type="Resource" id="Resource_s700g"]
+script = ExtResource("4_lseqf")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_nnwrl"]
+script = ExtResource("5_txka3")
+position = Vector2(-36, 0)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_s700g")
+
+[sub_resource type="Resource" id="Resource_8af7t"]
+script = ExtResource("6_emja4")
+_points = {
+0: SubResource("Resource_w2liv"),
+1: SubResource("Resource_w52lb"),
+2: SubResource("Resource_sqfyk"),
+3: SubResource("Resource_knqnr"),
+4: SubResource("Resource_nnwrl")
+}
+_point_order = Array[int]([0, 1, 2, 4, 3])
+_constraints = {
+Array[int]([0, 3]): 15
+}
+_next_key = 6
+_material_overrides = {}
+
+[sub_resource type="Resource" id="Resource_fm7aw"]
+script = ExtResource("7_s1dqu")
+_edge_meta_materials = Array[Resource("res://addons/rmsmartshape/materials/edge_material_metadata.gd")]([])
+fill_textures = Array[Texture2D]([ExtResource("7_j2r3p")])
+fill_texture_z_index = -10
+fill_texture_show_behind_parent = false
+fill_mesh_offset = 0.0
+render_offset = 0.0
+
+[node name="Flipper" type="RigidBody2D"]
+collision_mask = 0
+custom_integrator = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_d5dbd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.13, 0.13)
+polygon = PackedVector2Array(-7.58795e-07, -32.0008, 155.25, -23.5003, 235.406, -13.438, 249.711, -10.3803, 260.614, -7.11793, 264.616, -5.41125, 266.225, -4.53952, 267.562, -3.656, 268.616, -2.76058, 269.382, -1.85328, 269.849, -0.933388, 270.007, 0, 269.849, 0.933387, 269.382, 1.85329, 268.616, 2.76058, 267.562, 3.656, 266.225, 4.53953, 264.616, 5.41125, 260.614, 7.11793, 249.711, 10.3803, 235.406, 13.438, 155.25, 23.5003, -7.5862e-07, 32.0008, -6.33703, 31.6416, -11.883, 30.6256, -14.3757, 29.9007, -16.6906, 29.0472, -18.834, 28.0765, -20.8127, 27.0003, -22.6331, 25.8303, -24.3022, 24.5787, -27.2117, 21.8758, -29.5935, 18.9849, -31.5006, 16.0004, -32.9858, 13.0158, -34.1019, 10.1251, -34.9017, 7.42195, -35.4379, 5.00007, -35.9301, 1.37504, -36.0007, 0, -35.9301, -1.37504, -35.4379, -5.00007, -34.9017, -7.42195, -34.1019, -10.1251, -32.9858, -13.0158, -31.5006, -16.0004, -29.5935, -18.9849, -27.2117, -21.8758, -24.3022, -24.5787, -22.6331, -25.8303, -20.8127, -27.0003, -18.834, -28.0765, -16.6906, -29.0472, -14.3757, -29.9007, -11.883, -30.6256, -6.33703, -31.6416)
+
+[node name="SS2D_Shape_Closed" type="Node2D" parent="."]
+material = SubResource("ShaderMaterial_f2qoc")
+scale = Vector2(0.13, 0.13)
+script = ExtResource("3_b17d2")
+_points = SubResource("Resource_8af7t")
+shape_material = SubResource("Resource_fm7aw")
+collision_size = 0.0

@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmdkojh064blv"]
+
+[ext_resource type="Script" path="res://gameplay/scripts/Torch.gd" id="1_7n36k"]
+[ext_resource type="Texture2D" uid="uid://7h6nc0r37n3o" path="res://gameplay/assets/Unlit_Torch.png" id="2_brg7d"]
+[ext_resource type="Texture2D" uid="uid://cb3pgq5ucxfye" path="res://gameplay/assets/Lit_Torch.png" id="3_pwv0q"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lxecs"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ke4f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_brg7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pwv0q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7hi6v"]
+radius = 7.0
+height = 14.0
+
+[node name="Torch" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_lxecs")
+script = ExtResource("1_7n36k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1ke4f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("CapsuleShape2D_7hi6v")

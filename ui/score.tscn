@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdiskl2imd2eg"]
+
+[ext_resource type="Script" path="res://ui/score.gd" id="1_73jbw"]
+
+[node name="Score" type="Label"]
+offset_right = 52.0
+offset_bottom = 26.0
+text = "Score: "
+script = ExtResource("1_73jbw")

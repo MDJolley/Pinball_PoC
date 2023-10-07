@@ -19,3 +19,8 @@ func _integrate_forces(state):
 
 func _process(delta):
 	pass
+
+func _hit_something(body):
+	print("Ball has hit something")
+	if body.has_method("hit"):
+		body.hit(self)

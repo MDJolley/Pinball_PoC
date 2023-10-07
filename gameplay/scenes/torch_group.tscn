@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctm1ek4u2cnxp"]
+
+[ext_resource type="Script" path="res://gameplay/scripts/Torch_Group.gd" id="1_4dbsd"]
+
+[node name="Torch_Group" type="Node2D"]
+script = ExtResource("1_4dbsd")

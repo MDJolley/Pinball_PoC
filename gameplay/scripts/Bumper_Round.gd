@@ -13,6 +13,7 @@ func _process(delta):
 
 func _on_collision(body):
 	if body.is_in_group("ball"):
+		Player.add_points(10)
 		var direction : Vector2 = body.position - self.position
 #		body.apply_impulse(direction.normalized() * strength, Vector2())
 		body.set_linear_velocity(direction.normalized() * strength)

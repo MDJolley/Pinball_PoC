@@ -1,35 +1,71 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2nbx0xw46im7"]
+[gd_scene load_steps=9 format=3 uid="uid://cko0r30owq1f0"]
 
 [ext_resource type="PackedScene" uid="uid://dwbcsxf4rgfef" path="res://gameplay/scenes/Ball.tscn" id="1_1mbjl"]
 [ext_resource type="PackedScene" uid="uid://cknyc4n4ivfuh" path="res://gameplay/scenes/Arena.tscn" id="1_hvy14"]
-[ext_resource type="PackedScene" uid="uid://bd7rvuomtx7at" path="res://gameplay/scenes/Flipper_Left.tscn" id="3_5duty"]
-[ext_resource type="PackedScene" uid="uid://bbmowq58sty5c" path="res://gameplay/scenes/Flipper_Right.tscn" id="4_2yasa"]
+[ext_resource type="PackedScene" uid="uid://0d3edxe4po8e" path="res://gameplay/scenes/flipper_right.tscn" id="4_eku5c"]
 [ext_resource type="PackedScene" uid="uid://b8g5ghr436lgf" path="res://gameplay/scenes/bumper_round.tscn" id="5_aipb0"]
-[ext_resource type="PackedScene" uid="uid://cvsqpfm44wjcp" path="res://gameplay/scenes/kill_zone.tscn" id="6_lfy1m"]
+[ext_resource type="PackedScene" uid="uid://dmdkojh064blv" path="res://gameplay/scenes/torch.tscn" id="6_frxkl"]
+[ext_resource type="PackedScene" uid="uid://ctm1ek4u2cnxp" path="res://gameplay/scenes/torch_group.tscn" id="6_omxd8"]
+[ext_resource type="PackedScene" uid="uid://bvuywtmfjgb8c" path="res://gameplay/scenes/flipper_left.tscn" id="6_rjh7k"]
+[ext_resource type="PackedScene" uid="uid://cdiskl2imd2eg" path="res://ui/score.tscn" id="8_4ot7u"]
 
-[node name="Node2D" type="Node2D"]
-
-[node name="Flipper_Left" parent="." instance=ExtResource("3_5duty")]
-position = Vector2(135, 595)
-scale = Vector2(0.418, 0.418)
-
-[node name="Flipper_Right" parent="." instance=ExtResource("4_2yasa")]
-position = Vector2(223, 594)
-scale = Vector2(0.418, 0.418)
-
-[node name="Ball" parent="." instance=ExtResource("1_1mbjl")]
-position = Vector2(190, 361)
-
-[node name="Bumper_Round" parent="." instance=ExtResource("5_aipb0")]
-position = Vector2(81, 315)
-
-[node name="Bumper_Round2" parent="." instance=ExtResource("5_aipb0")]
-position = Vector2(268, 307)
-
-[node name="Bumper_Round3" parent="." instance=ExtResource("5_aipb0")]
-position = Vector2(176, 399)
+[node name="Main" type="Node2D"]
 
 [node name="Node2D" parent="." instance=ExtResource("1_hvy14")]
 
-[node name="Kill Zone" parent="." instance=ExtResource("6_lfy1m")]
-position = Vector2(180, 655)
+[node name="Ball" parent="." instance=ExtResource("1_1mbjl")]
+position = Vector2(62, 376)
+
+[node name="Flipper" parent="." instance=ExtResource("6_rjh7k")]
+position = Vector2(142, 599)
+
+[node name="Flipper2" parent="." instance=ExtResource("4_eku5c")]
+position = Vector2(215, 599)
+
+[node name="Bumper_Round" parent="." instance=ExtResource("5_aipb0")]
+position = Vector2(26, 339)
+
+[node name="Bumper_Round2" parent="." instance=ExtResource("5_aipb0")]
+position = Vector2(132, 384)
+
+[node name="Bumper_Round3" parent="." instance=ExtResource("5_aipb0")]
+position = Vector2(236, 382)
+
+[node name="Bumper_Round4" parent="." instance=ExtResource("5_aipb0")]
+position = Vector2(334, 336)
+
+[node name="Torch_Group" parent="." instance=ExtResource("6_omxd8")]
+
+[node name="Torch3" parent="Torch_Group" instance=ExtResource("6_frxkl")]
+position = Vector2(182, 426)
+
+[node name="Torch2" parent="Torch_Group" instance=ExtResource("6_frxkl")]
+position = Vector2(281, 468)
+
+[node name="Torch" parent="Torch_Group" instance=ExtResource("6_frxkl")]
+position = Vector2(96, 470)
+
+[node name="Score" parent="." instance=ExtResource("8_4ot7u")]
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 31.0
+
+[node name="Torch_Group2" parent="." instance=ExtResource("6_omxd8")]
+
+[node name="Torch" parent="Torch_Group2" instance=ExtResource("6_frxkl")]
+position = Vector2(208, 142)
+
+[node name="Torch2" parent="Torch_Group2" instance=ExtResource("6_frxkl")]
+position = Vector2(149, 141)
+
+[node name="Torch3" parent="Torch_Group2" instance=ExtResource("6_frxkl")]
+position = Vector2(235, 201)
+
+[node name="Torch4" parent="Torch_Group2" instance=ExtResource("6_frxkl")]
+position = Vector2(131, 207)
+
+[node name="Torch5" parent="Torch_Group2" instance=ExtResource("6_frxkl")]
+position = Vector2(182, 248)
+
+[connection signal="body_entered" from="Ball" to="Ball" method="_hit_something"]
