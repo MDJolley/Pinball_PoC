@@ -13,6 +13,7 @@ func _process(delta):
 
 func hit(body):
 	$AnimatedSprite2D.set_frame(1)
+	body.respawn()
 	if not active:
 		Player.add_points(100)
 		active = true

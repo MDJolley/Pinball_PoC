@@ -5,12 +5,21 @@ extends Area2D
 func _ready():
 	pass # Replace with function body.
 
-func _on_ball_entered(body):
+func _on_collision(body):
 	if body.is_in_group("ball"):
-		print("Lost ball")
 		body.queue_free()
-	pass
+		Player.change_lives(-1)
+		get_parent().get_parent().spawn_ball()
+		
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func hit(body):
+	if body.is_in_group("ball"):
+		body.queue_free()
+		Player.change_lives(-1)
+		get_parent().spawn_ball()
+

@@ -1,15 +1,15 @@
 extends RigidBody2D
 
 var maxSpeed : int = 2000
-var spawnPoint : Vector2 = Vector2(60, 377)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	respawn()
 	pass
 
 func respawn():
 	print("respawning")
-	self.global_position = spawnPoint
+#	self.global_position = spawnPoint
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
