@@ -4,13 +4,8 @@ var maxSpeed : int = 2000
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	respawn()
 	pass
 
-func respawn():
-	print("respawning")
-#	self.global_position = spawnPoint
-	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	pass
@@ -26,6 +21,5 @@ func _process(delta):
 	pass
 
 func _hit_something(body):
-	print("Ball has hit something")
 	if body.has_method("hit"):
 		body.hit(self)

@@ -13,7 +13,6 @@ func _process(delta):
 	pass
 
 func spawn_ball():
-	print("ball spawning")
 	var ball = ball_path.instantiate()
 	ball.set_position(spawn_point)
 	add_child(ball)

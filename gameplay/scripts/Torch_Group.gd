@@ -8,7 +8,6 @@ func _ready():
 	for torch in torches:
 #		torch.connect()
 		torch.activated.connect(_torch_activated)
-		print("torch added")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -16,7 +15,6 @@ func _process(delta):
 
 func _torch_activated():
 	activeTorches += 1
-	print("There are now ", activeTorches, " active!")
 	if activeTorches == torches.size():
 		_all_torches_active()
 
