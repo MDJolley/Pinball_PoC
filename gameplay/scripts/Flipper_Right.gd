@@ -21,5 +21,5 @@ func _physics_process(delta):
 
 func rotate_flipper(direction, delta):
 	var currentRotation = get_rotation()
-	var newRotation = clamp(currentRotation + direction * flipperSpeed * delta, deg_to_rad(-30), maxRotation)
+	var newRotation = clamp(currentRotation + direction * flipperSpeed * delta, deg_to_rad(0), maxRotation)
 	set_rotation(newRotation)

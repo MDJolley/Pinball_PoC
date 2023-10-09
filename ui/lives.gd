@@ -2,11 +2,11 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Player.score_updated.connect(_update_score)
-	_update_score()
+	Player.lives_updated.connect(_update_lives)
+	_update_lives()
 
-func _update_score():
-	self.set_text("Score: " + str(Player.score))
+func _update_lives():
+	self.set_text("Lives: " + str(Player.lives))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

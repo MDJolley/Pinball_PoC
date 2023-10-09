@@ -1,26 +1,33 @@
-[gd_scene load_steps=9 format=3 uid="uid://cko0r30owq1f0"]
+[gd_scene load_steps=13 format=3 uid="uid://cko0r30owq1f0"]
 
 [ext_resource type="PackedScene" uid="uid://dwbcsxf4rgfef" path="res://gameplay/scenes/Ball.tscn" id="1_1mbjl"]
 [ext_resource type="PackedScene" uid="uid://cknyc4n4ivfuh" path="res://gameplay/scenes/Arena.tscn" id="1_hvy14"]
-[ext_resource type="PackedScene" uid="uid://0d3edxe4po8e" path="res://gameplay/scenes/flipper_right.tscn" id="4_eku5c"]
+[ext_resource type="PackedScene" uid="uid://0d3edxe4po8e" path="res://gameplay/scenes/Flipper_Right.tscn" id="4_eku5c"]
 [ext_resource type="PackedScene" uid="uid://b8g5ghr436lgf" path="res://gameplay/scenes/bumper_round.tscn" id="5_aipb0"]
 [ext_resource type="PackedScene" uid="uid://dmdkojh064blv" path="res://gameplay/scenes/torch.tscn" id="6_frxkl"]
 [ext_resource type="PackedScene" uid="uid://ctm1ek4u2cnxp" path="res://gameplay/scenes/torch_group.tscn" id="6_omxd8"]
-[ext_resource type="PackedScene" uid="uid://bvuywtmfjgb8c" path="res://gameplay/scenes/flipper_left.tscn" id="6_rjh7k"]
+[ext_resource type="PackedScene" uid="uid://bvuywtmfjgb8c" path="res://gameplay/scenes/Flipper_Left.tscn" id="6_rjh7k"]
 [ext_resource type="PackedScene" uid="uid://cdiskl2imd2eg" path="res://ui/score.tscn" id="8_4ot7u"]
+[ext_resource type="Script" path="res://ui/lives.gd" id="9_bqm52"]
+[ext_resource type="Script" path="res://gameplay/Kill_Plane.gd" id="9_pg2qc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2poyb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l82if"]
+size = Vector2(82, 15.745)
 
 [node name="Main" type="Node2D"]
 
 [node name="Node2D" parent="." instance=ExtResource("1_hvy14")]
 
 [node name="Ball" parent="." instance=ExtResource("1_1mbjl")]
-position = Vector2(62, 376)
+position = Vector2(60, 377)
 
 [node name="Flipper" parent="." instance=ExtResource("6_rjh7k")]
-position = Vector2(142, 599)
+position = Vector2(142, 596)
 
 [node name="Flipper2" parent="." instance=ExtResource("4_eku5c")]
-position = Vector2(215, 599)
+position = Vector2(218, 596)
 
 [node name="Bumper_Round" parent="." instance=ExtResource("5_aipb0")]
 position = Vector2(26, 339)
@@ -51,6 +58,14 @@ offset_top = 5.0
 offset_right = 60.0
 offset_bottom = 31.0
 
+[node name="Lives" parent="." instance=ExtResource("8_4ot7u")]
+offset_left = 300.0
+offset_top = 6.0
+offset_right = 352.0
+offset_bottom = 32.0
+text = "Lives: "
+script = ExtResource("9_bqm52")
+
 [node name="Torch_Group2" parent="." instance=ExtResource("6_omxd8")]
 
 [node name="Torch" parent="Torch_Group2" instance=ExtResource("6_frxkl")]
@@ -67,5 +82,15 @@ position = Vector2(131, 207)
 
 [node name="Torch5" parent="Torch_Group2" instance=ExtResource("6_frxkl")]
 position = Vector2(182, 248)
+
+[node name="Kill_Plane" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_2poyb")
+script = ExtResource("9_pg2qc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill_Plane"]
+position = Vector2(182, 654)
+shape = SubResource("RectangleShape2D_l82if")
+one_way_collision_margin = 0.0
+debug_color = Color(0.670588, 0.380392, 0.858824, 0.419608)
 
 [connection signal="body_entered" from="Ball" to="Ball" method="_hit_something"]
