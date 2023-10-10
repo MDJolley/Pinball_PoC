@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 var strength : int = 700
 
@@ -11,7 +11,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_collision(body):
+func hit(body):
 	if body.is_in_group("ball"):
 		Player.add_points(10)
 		var direction : Vector2 = body.position - self.position

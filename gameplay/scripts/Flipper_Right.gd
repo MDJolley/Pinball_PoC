@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 var maxRotation = deg_to_rad(30)  # Adjust the maximum rotation angle
+var minRotation = deg_to_rad(-15)
 var flipperSpeed = 15  # Adjust the flipper's speed
 
 # Called when the node enters the scene tree for the first time.
@@ -21,5 +22,5 @@ func _physics_process(delta):
 
 func rotate_flipper(direction, delta):
 	var currentRotation = get_rotation()
-	var newRotation = clamp(currentRotation + direction * flipperSpeed * delta, deg_to_rad(0), maxRotation)
+	var newRotation = clamp(currentRotation + direction * flipperSpeed * delta, minRotation, maxRotation)
 	set_rotation(newRotation)
