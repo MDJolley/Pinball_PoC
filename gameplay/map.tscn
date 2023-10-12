@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://cko0r30owq1f0"]
+[gd_scene load_steps=12 format=3 uid="uid://cko0r30owq1f0"]
 
 [ext_resource type="Script" path="res://gameplay/map.gd" id="1_4lhxq"]
 [ext_resource type="PackedScene" uid="uid://cknyc4n4ivfuh" path="res://gameplay/scenes/Arena.tscn" id="2_rgo7e"]
-[ext_resource type="PackedScene" uid="uid://bvuywtmfjgb8c" path="res://gameplay/scenes/flipper_left.tscn" id="4_rt0n1"]
-[ext_resource type="PackedScene" uid="uid://0d3edxe4po8e" path="res://gameplay/scenes/flipper_right.tscn" id="5_x0rf4"]
+[ext_resource type="PackedScene" uid="uid://bvuywtmfjgb8c" path="res://gameplay/scenes/Flipper_Left.tscn" id="4_rt0n1"]
+[ext_resource type="PackedScene" uid="uid://0d3edxe4po8e" path="res://gameplay/scenes/Flipper_Right.tscn" id="5_x0rf4"]
 [ext_resource type="PackedScene" uid="uid://b8g5ghr436lgf" path="res://gameplay/scenes/bumper_round.tscn" id="6_gdvoj"]
 [ext_resource type="PackedScene" uid="uid://ctm1ek4u2cnxp" path="res://gameplay/scenes/torch_group.tscn" id="7_325y7"]
 [ext_resource type="PackedScene" uid="uid://dmdkojh064blv" path="res://gameplay/scenes/torch.tscn" id="8_vjn3g"]
 [ext_resource type="PackedScene" uid="uid://cdiskl2imd2eg" path="res://ui/score.tscn" id="9_xrlr0"]
+[ext_resource type="PackedScene" uid="uid://1hhry6yvhn45" path="res://ui/GameOver.tscn" id="10_7i0d6"]
 [ext_resource type="Script" path="res://ui/lives.gd" id="10_f2k0u"]
 [ext_resource type="PackedScene" uid="uid://cvsqpfm44wjcp" path="res://gameplay/scenes/kill_zone.tscn" id="11_go0u0"]
 
@@ -59,6 +60,13 @@ offset_right = 352.0
 offset_bottom = 32.0
 text = "Lives: "
 script = ExtResource("10_f2k0u")
+
+[node name="GameOver" parent="." instance=ExtResource("10_7i0d6")]
+visible = false
+offset_left = 71.0
+offset_top = 303.0
+offset_right = 288.0
+offset_bottom = 355.0
 
 [node name="Torch_Group2" parent="." instance=ExtResource("7_325y7")]
 

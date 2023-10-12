@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://1hhry6yvhn45"]
+
+[ext_resource type="Script" path="res://ui/GameOver.gd" id="1_tsefe"]
+
+[node name="GameOver" type="Label"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 59.0
+offset_top = 300.0
+offset_right = -109.0
+offset_bottom = -314.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over
+Final Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+script = ExtResource("1_tsefe")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 87.0
+offset_right = 189.0
+offset_bottom = 113.0
+text = "Press \"R\" to try again"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

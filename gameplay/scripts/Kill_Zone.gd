@@ -9,7 +9,10 @@ func _on_collision(body):
 	if body.is_in_group("ball"):
 		body.queue_free()
 		Player.change_lives(-1)
-		get_parent().get_parent().spawn_ball()
+		if Player.lives > 0:
+			get_parent().get_parent().spawn_ball()
+		else:
+			get_parent().get_parent().game_over()
 		
 
 

@@ -24,3 +24,7 @@ func _all_torches_active():
 	activeTorches = 0
 	for torch in torches:
 		torch._reset()
+
+func reset_torches():
+	for torch in self.get_children():
+		torch._reset()
