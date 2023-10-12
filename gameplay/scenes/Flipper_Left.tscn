@@ -17,7 +17,7 @@ shader_parameter/pattern = 1
 shader_parameter/inside = false
 shader_parameter/add_margins = false
 
-[sub_resource type="Resource" id="Resource_xkome"]
+[sub_resource type="Resource" id="Resource_exx6j"]
 script = ExtResource("4_lseqf")
 texture_idx = 0
 flip = false
@@ -28,9 +28,9 @@ script = ExtResource("5_txka3")
 position = Vector2(0, -32)
 point_in = Vector2(-36, 0)
 point_out = Vector2(54, 0)
-properties = SubResource("Resource_xkome")
+properties = SubResource("Resource_exx6j")
 
-[sub_resource type="Resource" id="Resource_4qhpf"]
+[sub_resource type="Resource" id="Resource_iyrpa"]
 script = ExtResource("4_lseqf")
 texture_idx = -7
 flip = false
@@ -41,9 +41,9 @@ script = ExtResource("5_txka3")
 position = Vector2(270, 0)
 point_in = Vector2(0, -20)
 point_out = Vector2(0, 20)
-properties = SubResource("Resource_4qhpf")
+properties = SubResource("Resource_iyrpa")
 
-[sub_resource type="Resource" id="Resource_21k1j"]
+[sub_resource type="Resource" id="Resource_8m12x"]
 script = ExtResource("4_lseqf")
 texture_idx = 0
 flip = false
@@ -54,9 +54,9 @@ script = ExtResource("5_txka3")
 position = Vector2(0, 32)
 point_in = Vector2(54, 0)
 point_out = Vector2(-36, 0)
-properties = SubResource("Resource_21k1j")
+properties = SubResource("Resource_8m12x")
 
-[sub_resource type="Resource" id="Resource_vsrjw"]
+[sub_resource type="Resource" id="Resource_ryj50"]
 script = ExtResource("4_lseqf")
 texture_idx = 0
 flip = false
@@ -67,9 +67,9 @@ script = ExtResource("5_txka3")
 position = Vector2(0, -32)
 point_in = Vector2(-36, 0)
 point_out = Vector2(54, 0)
-properties = SubResource("Resource_vsrjw")
+properties = SubResource("Resource_ryj50")
 
-[sub_resource type="Resource" id="Resource_yg88s"]
+[sub_resource type="Resource" id="Resource_ampiv"]
 script = ExtResource("4_lseqf")
 texture_idx = 0
 flip = false
@@ -80,7 +80,7 @@ script = ExtResource("5_txka3")
 position = Vector2(-36, 0)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_yg88s")
+properties = SubResource("Resource_ampiv")
 
 [sub_resource type="Resource" id="Resource_8af7t"]
 script = ExtResource("6_emja4")
