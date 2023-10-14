@@ -1,0 +1,136 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1hkqunfs6ixq"]
+
+[ext_resource type="Script" path="res://ui/scenes/MainMenu.gd" id="1_0bxxn"]
+[ext_resource type="Texture2D" uid="uid://cfst0pbac1uj5" path="res://ui/assets/free-to-use-nine-patch-rect-textures-v0-jlv0yj89wj1a1.webp" id="2_bro7s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qvfvb"]
+font_size = 61
+font_color = Color(1, 0.682353, 0.247059, 1)
+outline_size = 4
+outline_color = Color(1, 1, 0.67451, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ka32s"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0bxxn")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 640.0
+color = Color(0.305882, 0.235294, 0.219608, 1)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 640.0
+texture = ExtResource("2_bro7s")
+region_rect = Rect2(127, 498, 123, 124)
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 42
+patch_margin_bottom = 44
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -43.5
+offset_right = 125.5
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="PINBALL" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PINBALL"
+label_settings = SubResource("LabelSettings_qvfvb")
+
+[node name="NewGame" type="NinePatchRect" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 35)
+layout_mode = 2
+texture = ExtResource("2_bro7s")
+region_rect = Rect2(127, 624, 122, 121)
+patch_margin_left = 31
+patch_margin_top = 30
+patch_margin_right = 31
+patch_margin_bottom = 31
+
+[node name="NewGameBtn" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/NewGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="NewGameTxt" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/NewGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "New Game"
+label_settings = SubResource("LabelSettings_ka32s")
+
+[node name="ExitGame" type="NinePatchRect" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 35)
+layout_mode = 2
+texture = ExtResource("2_bro7s")
+region_rect = Rect2(127, 624, 122, 121)
+patch_margin_left = 31
+patch_margin_top = 30
+patch_margin_right = 31
+patch_margin_bottom = 31
+
+[node name="ExitGameBtn" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/ExitGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="ExitGameTxt" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/ExitGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit Game"
+label_settings = SubResource("LabelSettings_ka32s")
+
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/NewGame/NewGameBtn" to="." method="_on_new_game_btn_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/ExitGame/ExitGameBtn" to="." method="_on_exit_game_btn_pressed"]

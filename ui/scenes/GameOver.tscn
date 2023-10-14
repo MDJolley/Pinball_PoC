@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://1hhry6yvhn45"]
+[gd_scene load_steps=2 format=3 uid="uid://dl032t70eyplg"]
 
-[ext_resource type="Script" path="res://ui/GameOver.gd" id="1_tsefe"]
+[sub_resource type="GDScript" id="GDScript_p211p"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+func game_over():
+	self.set_text(self.text + str(Player.score))
+	self.show()
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="GameOver" type="Label"]
 anchors_preset = 15
@@ -17,7 +32,7 @@ Final Score:"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-script = ExtResource("1_tsefe")
+script = SubResource("GDScript_p211p")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

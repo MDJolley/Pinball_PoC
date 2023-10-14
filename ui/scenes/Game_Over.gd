@@ -16,9 +16,9 @@ func _process(delta):
 func _on_retry_button_pressed():
 	get_tree().change_scene_to_file("res://gameplay/map.tscn")
 
-##TODO WHEN MENU SCENE IS MADE
+
 func _on_menu_button_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://ui/scenes/MainMenu.tscn")
 
 
 func _on_quit_button_pressed():
